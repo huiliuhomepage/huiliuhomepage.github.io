@@ -50,7 +50,7 @@ for fulldirname in dirs:
         for line in open(songdirs[i], "r", encoding = "utf-8"):
             f.write(line.strip("\n").replace("「", "<ruby><rb>").replace("」", "</rb>").replace("【", "<rt>").replace("】", "</rt></ruby>") + "<br>\n")
     f.write("</h1>\n")
-    f.write("<br><a href=\"..\indexenka.html\">Enka Category</a>")
+    f.write("<br><br><a href=\"..\indexenka.html\">Enka Category</a>")
 
     f.write("</body>\n")
     f.write("</html>\n")

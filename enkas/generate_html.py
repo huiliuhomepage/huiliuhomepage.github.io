@@ -26,9 +26,9 @@ for fulldirname in dirs:
     f.write("</head>\n")
     f.write("<body>\n")
     
-    f.write("<a href=\"..\indexenka.html\">Enka Category</a><br><br>\n")
+    f.write("<a href=\"..\indexenka.html\" id=\"" + dirname+ "\">Enka Category</a><br><br>\n")
     f.write("<h2>\n")
-    f.write("<a id=\"" + dirname+ "\">" + dirname + "</a><br><br>\n")
+    f.write(dirname + "<br><br>\n")
     for song in songs:
         f.write("<a href=\"#" + song + "\">" + song + "</a><br>\n")
     f.write("</h2>\n")
@@ -40,7 +40,8 @@ for fulldirname in dirs:
             f.write(line.strip("\n").replace("《", "<ruby><rb>").replace("》", "</rb>").replace("【", "<rt>").replace("】", "</rt></ruby>") + "<br>\n")
         f.write("</h1><br><h3><a href=\"#" + dirname + "\">Back to Top</a></h3>\n")
 
-    #f.write("<a href=\"..\indexenka.html\">Enka Category</a>")
+    f.write("<a href=\"..\indexenka.html\">Enka Category</a>")
+    
     f.write("</body>\n")
     f.write("</html>")
     f.close()

@@ -2,12 +2,15 @@ publications = []
 supervisions = []
 
 for filename in ["publications.html", "supervision.html"]:
-	flag = 0
-	for line in open(filename, "r", encoding = "utf-8"):
-		if flag and line.find("/table") < 1:
-			publications.append(line)
-		if line.find("-->") > 0:
-			flag = 1
+    flag = 0
+    for line in open(filename, "r", encoding = "utf-8"):
+        if flag and line.find("/table") < 1:
+            if filename.find("publication") > -1:
+                publications.append(line)
+            else:
+                supervisions.append(line)
+        if line.find("-->") > 0:
+            flag = 1
 
 for research_filename in ["research.html", "researchcn.html"]:
 	researchlines = []
@@ -37,10 +40,9 @@ for research_filename in ["research.html", "researchcn.html"]:
 			flag_publication = 1
 
 		if line.find("Selected Supervised Master and Bachelor Theses") > 0 or line.find("指导完成的有代表性的优秀本科、硕士毕业论文") > 0:
-			researchlines.append("\t\t\t<tr><td><table align=\"left\" cellpadding=\"15\">\n")
+			researchlines.append("\t\t\t\t<tr><td><table align=\"left\" cellpadding=\"15\">\n")
 			for line in supervisions:
-				researchlines.append("\t\t\t" + line)
-			researchlines.append("\t\t\t</table></td></tr>\n\n")
+				researchlines.append("\t\t\t\t" + line)
 			flag_supervision = 1
 
 	f = open(research_filename, "w", encoding = "utf-8")

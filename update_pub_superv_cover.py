@@ -59,7 +59,7 @@ for art_filename in ["art.html", "artcn.html"]:
 	
 	for line in open(art_filename, "r", encoding = "utf-8"):
 		if flag_art:
-			if line.find("<tr><td></td></tr>") > -1:
+			if line.find("</table></td></tr>") > -1:
 				flag_art = 0 
 			else:
 				continue
@@ -70,7 +70,7 @@ for art_filename in ["art.html", "artcn.html"]:
 			artlines.append("\t\t\t\t<tr><td><table align=\"left\" cellpadding=\"15\">\n")
 			for line in covers:
 				artlines.append("\t\t\t\t" + line)
-			artlines.append("\t\t\t\t</table></td></tr>\n\n")
+			#artlines.append("\t\t\t\t</table></td></tr>\n\n")
 			flag_art = 1
 
 	f = open(art_filename, "w", encoding = "utf-8")

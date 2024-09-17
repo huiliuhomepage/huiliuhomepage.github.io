@@ -36,7 +36,7 @@ for research_filename in ["research.html", "researchcn.html"]:
 
 		researchlines.append(line)
 
-		if line.find(">Publications<") > 0 or line.find(">论文发表<") > 0:
+		if line.find(">Publications (") > 0 or line.find(">论文发表（") > 0:
 			researchlines.append("\t\t\t<tr><td><table align=\"left\" cellpadding=\"15\">\n")
 			for line in publications:
 				researchlines.append("\t\t\t" + line)

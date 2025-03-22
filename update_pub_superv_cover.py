@@ -8,7 +8,7 @@ publications = []
 supervisions = []
 covers = []
 
-print ("Impact factor:", sum(impact) + sum(impact_co), "First/corresponding:", sum*(impact))
+print ("Impact factor:", sum(impact) + sum(impact_co), "First/corresponding:", sum(impact))
 input()
 
 for filename in ["publications.html", "supervision.html", "cover.html"]:

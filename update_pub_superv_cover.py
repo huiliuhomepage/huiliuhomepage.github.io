@@ -1,18 +1,19 @@
 impact = [9.0,
+          7.1,
           6.8, 6.7, 6.6,
 		  5.4, 5.1,
 		  4.6, 4.3, 4.0, 4.0, 4.0,
 		  3.9, 3.4, 3.4, 3.4,
-		  4.3, 4,3, 4.3, 4.3, 4.3,
-		  3.9, 3.8, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4,
+		  4.3, 4.3, 4.3, 4.3, 4.3,
+		  3.9, 3.8, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4, 3.4,
 		  2.7, 2.6, 2.6, 2.6, 2.6, 2.1, 2.1, 2.1, 2.1]
-impact_co = [8.5, 3.4, 3.4, 3.4, 2.7, 2.3, 9.1]
+impact_co = [9.1, 8.5, 3.4, 3.4, 3.4, 2.7, 2.3]
 
 publications = []
 supervisions = []
 covers = []
 
-print ("Impact factor:", sum(impact) + sum(impact_co), "First/corresponding:", sum(impact))
+print ("Amount:", len(impact), "+", len(impact_co), "Impact factor:", sum(impact) + sum(impact_co), "First/corresponding:", sum(impact))
 input()
 
 for filename in ["publications.html", "supervision.html", "cover.html"]:

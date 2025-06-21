@@ -52,9 +52,7 @@ for research_filename in ["research.html", "researchcn.html"]:
         
         line = line.replace("Publications (" + str(amount - 1).replace (" ", ""), "Publications (" + str(amount).replace (" ", ""))
         line = line.replace("论文发表（" + str(amount - 1).replace (" ", ""), "论文发表（" + str(amount).replace (" ", ""))
-        researchlines.append(line))
-
-x
+        researchlines.append(line)
         
         if line.find(">Publications (") > 0 or line.find(">论文发表（") > 0:
             researchlines.append("\t\t\t<tr><td><table align=\"left\" cellpadding=\"15\">\n")

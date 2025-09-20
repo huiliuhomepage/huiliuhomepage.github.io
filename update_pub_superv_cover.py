@@ -1,4 +1,4 @@
-amount = 88
+import re
 
 impact = [9.4, 9.4,
           7.6, 7.4, 7.1,
@@ -12,11 +12,18 @@ impact = [9.4, 9.4,
           1.7, 1.7, 1.7]
 impact_co = [11.4, 8.2, 3.4, 3.4, 3.4, 2.7, 2.3]
 
+amount_book = 5
+amount_chapter = 4
+amount_conference = 30
+amount = amount_book + amount_chapter + amount_conference + len(impact) + len(impact_co)
+
+
+
 publications = []
 supervisions = []
 covers = []
 
-print ("Amount:", len(impact), "+", len(impact_co), "Impact factor:", sum(impact) + sum(impact_co), "First/corresponding:", sum(impact))
+print ("\n", amount_book, "books\n", amount_chapter, "chapters\n", amount_conference, "conference papers\n", len(impact), "+", len(impact_co), "journal articles\n   Impact factor:", sum(impact) + sum(impact_co), "\n   First/corresponding:", sum(impact), "\n", amount, "publications")
 input()
 
 for filename in ["publications.html", "supervision.html", "cover.html"]:
@@ -50,9 +57,13 @@ for research_filename in ["research.html", "researchcn.html"]:
                 flag_supervision = 0
             else:
                 continue
-        
-        line = line.replace("Publications (" + str(amount - 1).replace (" ", ""), "Publications (" + str(amount).replace (" ", ""))
-        line = line.replace("论文发表（" + str(amount - 1).replace (" ", ""), "论文发表（" + str(amount).replace (" ", ""))
+                
+        if line.find("Publications (") > -1:
+            line = "\t\t\t<tr><td><h1 align=\"left\"><span style=\"text-decoration: overline\">Publications (" + str(amount).replace (" ", "") + ")</span></h1></td></tr>\n"
+
+        if line.find("论文发表（") > -1:
+            line = "\t\t\t<tr><td><h1 align=\"left\"><span style=\"text-decoration: overline\">论文发表（" + str(amount).replace (" ", "") + "）</span></h1> SCI总影响因子=" +  str(sum(impact) + sum(impact_co)).replace (" ", "") + "，其中一作/通讯总影响因子=" + str(sum(impact)).replace (" ", "") + "</td></tr>\n"
+
         researchlines.append(line)
         
         if line.find(">Publications (") > 0 or line.find(">论文发表（") > 0:

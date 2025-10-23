@@ -9,12 +9,12 @@ impact = [9.4, 9.4,
 		  4.8, 4.8, 4.8, 4.8, 4.8, 4.8, 4.3, 4.3,
 		  3.9, 3.9, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.5, 3.5,
 		  2.8, 2.8, 2.8, 2.8, 2.7, 2.6, 2.6, 2.6, 2.1, 2.1, 2.1,
-          1.7, 1.7, 1.7]
+          1.7, 1.7, 1.7, 1.7]
 impact_co = [11.4, 8.2, 3.4, 3.4, 3.4, 2.7, 2.3]
 
 amount_book = 5
 amount_chapter = 4
-amount_conference = 30
+amount_conference = 31
 amount = amount_book + amount_chapter + amount_conference + len(impact) + len(impact_co)
 
 publications = []

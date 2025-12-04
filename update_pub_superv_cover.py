@@ -15,7 +15,7 @@ impact_co = [11.4, 8.2, 3.4, 3.4, 3.4, 2.7, 2.3]
 
 amount_book = 5
 amount_chapter = 4
-amount_conference = 33
+amount_conference = 34
 amount = amount_book + amount_chapter + amount_conference + len(impact) + len(impact_co)
 
 publications = []

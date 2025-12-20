@@ -1,0 +1,23 @@
+count_tr_td_1 = 0
+count_tr_td_2 = 0
+
+start_count_1 = False
+start_count_2 = False
+
+with open('publications.html', 'r', encoding='utf-8') as file:
+    for line in file:
+        if start_count_2:
+            count_tr_td_2 += line.count('<tr><td>')
+            continue
+        if start_count_1:
+            if "Conference.png" in line:
+                start_count_1 = False
+                start_count_2 = True
+                continue;
+            count_tr_td_1 += line.count('<tr><td>')
+            continue
+        if "Journal.png" in line:
+            start_count_1 = True
+
+print("Journal:", count_tr_td_1 - 2, "Conference:", count_tr_td_2)
+input()
